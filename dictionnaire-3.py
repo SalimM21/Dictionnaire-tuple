@@ -28,7 +28,10 @@ def merge_dicts(dict1, dict2):
     for key, value in dict2.items():
         if key in merged:
             # Si la clé existe déjà, combiner les valeurs dans une liste
-            merged[key] = [merged[key], value] if isinstance(merged[key], list) else [merged[key], value]
+            if isinstance(merged[key], list):
+                merged[key].append(value)
+            else:
+                merged[key] = [merged[key], value]
         else:
             merged[key] = value
     return merged

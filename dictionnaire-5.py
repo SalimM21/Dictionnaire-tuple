@@ -13,13 +13,9 @@ print("Filière : ", etudiant_info[2])
 print("Moyenne générale : ", etudiant_info[3])
 
 # Tente de modifier la filière dans le tuple. Que se passe-t-il ? Explique pourquoi.
-try:
-    etudiant_info[2] = "Mathématiques"
-except TypeError as e:
-    print("Erreur :", e)
-    print("Les tuples sont immuables, donc on ne peut pas modifier leurs éléments.")
-    # Crée un nouveau tuple nommé etudiant_info_modifiee contenant les informations de etudiant_info, mais avec la filière modifiée en "Mathématiques".
-    etudiant_info_modifiee = (etudiant_info[0], etudiant_info[1], "Mathématiques", etudiant_info[3])
+# Les tuples sont immuables, donc on ne peut pas modifier leurs éléments directement.
+# Crée un nouveau tuple nommé etudiant_info_modifiee contenant les informations de etudiant_info, mais avec la filière modifiée en "Mathématiques".
+etudiant_info_modifiee = (etudiant_info[0], etudiant_info[1], "Mathématiques", etudiant_info[3])
 # Affiche le nouveau tuple etudiant_info_modifiee
 print("Nouveau tuple avec la filière modifiée :", etudiant_info_modifiee)   
 
